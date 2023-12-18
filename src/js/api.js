@@ -12,7 +12,7 @@ export async function getPhoto(input, page) {
     orientation: 'horizontal',
     safesearch: 'true',
     page: 'page',
-    per_page: '20',
+    per_page: '40',
   });
 
   const rosponse = await Axios.get(`${BASE_URL}${querryParams}`)
