@@ -66,8 +66,7 @@ async function onSearch(event) {
       'Sorry, there are no images matching your search query. Please try again.'
     );
     loadMoreBtn.style.display = 'none';
-  }
-  else if (page <= 40) {
+  } else if (page >= 40) {
     Notiflix.Notify.warning(
       "We're sorry, but you've reached the end of search results"
     );
