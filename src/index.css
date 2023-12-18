@@ -1,33 +1,99 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.btn{
-    position: absolute;
-    margin-left: 185px;
-    padding: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
+.btn {
+  position: absolute;
+  margin-left: 185px;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-
-.bgc{
-    background: rgb(58, 118, 248);
-    padding: 20px;
+.bgc {
+  background: rgb(58, 118, 248);
+  padding: 20px;
+  margin-bottom: 30px;
 }
 
-.search-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.text{
+.text {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
   padding-right: 35px;
   border-radius: 25px;
+}
+
+
+
+.load-more {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(58, 118, 248);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  grid-gap: 20px;
+  max-width: calc(100vw - 80px);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: 0 auto 30px;
+
+  display: grid;
+}
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba (0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.info-item {
+  margin: 0;
+}
+
+.photo-card:hover img {
+  transform: scale (1.1);
+}
+
+.photo-card:hover .info {
+  opacity: 1;
 }
