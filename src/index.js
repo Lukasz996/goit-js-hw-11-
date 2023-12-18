@@ -49,4 +49,20 @@ function createMarkup(image) {
   return result;
 }
 
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
+async function onSearch(event) {
+    event.preventDefault();
+    page = 1;
+    const result = await getPhoto(`${input.value}`, page)
+    loadMoreBtn.style.displey = ' block'
+    if(result.totalHits === 0 ){
+        Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+        loadMoreBtn.style.display = 'none'
+    } else {
+        Notiflix.Notify.success(`Hooray! We found ${result.totalHits} images.`);
+    }
+}
